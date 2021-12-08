@@ -180,11 +180,6 @@ template {
     --nav-item-link-hover: var(--color-primary);
 }
 
-[data-section-theme=“dark”] {
-    --text-color: var(--color-white);
-    --section-title-color: var(--color-white);
-    background-color: var(--color-black);
-}
 
 *,
 *:before,
@@ -335,4 +330,10 @@ a:active {
 
 .footer {
     padding: var(--footer-padding);
+}
+
+[data-section-theme="dark"] {
+    --text-color: var(--color-white);
+    --section-title-color: var(--color-white);
+    background-color: var(--color-black);
 }
