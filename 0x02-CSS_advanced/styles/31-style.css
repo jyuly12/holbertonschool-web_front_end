@@ -442,7 +442,8 @@ a:active {
 .card-testimonial .card-quote::before {
     content: "\201C";
     position: absolute;
-    top: -1rem;
+    top: -4.5rem;
+    right: -1rem;
     color: #efeded;
     font-size: 10rem;
     z-index: -1;
