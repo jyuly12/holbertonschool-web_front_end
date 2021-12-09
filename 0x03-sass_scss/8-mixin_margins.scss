@@ -1,0 +1,13 @@
+/* Margin mixin*/
+@mixin margin_value($m_left, $m_right) {
+    margin-left: $m_left;
+    margin-right: $m_right;
+}
+
+body {
+    @include margin_value(10px, 10px)    
+}
+  
+div {
+    @include margin_value(15px, 15px)
+}
