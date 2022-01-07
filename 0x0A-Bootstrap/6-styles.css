@@ -1,0 +1,44 @@
+:root {
+    --primary-color: #E0003C;
+    --secondary-color: #BC1340;
+    --muted-status-color: #8C8C8C;
+}
+.btn-primary {
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active{
+    background-color: var(--secondary-color) !important;
+    border-color: var(--secondary-color) !important;
+}
+
+.btn-outline-primary {
+    border-color: var(--primary-color) !important;
+    color: var(--primary-color) !important;
+}
+.btn-outline-primary:hover,
+.btn-outline-primary:focus,
+.btn-outline-primary:active{
+    border-color: var(--secondary-color) !important;
+    background-color: white !important;
+    color: var(--secondary-color) !important;
+}
+
+a,a:focus,
+a:hover{
+    color: var(--primary-color) !important;
+}
+
+.card, .card-header, .card-footer {
+    border-color: var(--primary-color) !important;
+    border-radius: 1rem;
+}
+
+.card-header {
+    background-color: var(--primary-color) !important;
+    color: white;
+    border-top-left-radius: 1rem !important;
+    border-top-right-radius: 1rem !important; 
+}
