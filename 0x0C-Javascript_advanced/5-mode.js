@@ -14,9 +14,9 @@ function main() {
     let darkMode = () => changeMode( 12, "bold", "capitalize", "black", "white");
     let screamMode = () => changeMode( 12, "normal", "lowercase", "white", "black");
 
-    let p = document.createElement("p");
-    let content = document.createTextNode("Welcome Holberton!");
-    p.appendChild(content);
+    let p = document.createElement("P");
+    p.innerHTML = "Welcome Holberton!";
+    body.appendChild(p);
 
     let spooky_btn = document.createElement("button");
     spooky_btn.innerHTML = "Spooky";
