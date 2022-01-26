@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Use js-cookie</title>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+  </head>
+  <body>
+    <div id="format">
+      <h2>Login to the website</h2>
+      <input type="text" id="firstname" placeholder="Firstname" />
+      <input type="text" id="email" placeholder="Email" />
+      <button onclick="setCookiesAndShowWelcomeMessage()">
+        Log me in
+      </button>
+    </div>
+    <script>
+
+      function showForm(){
+        document.getElementById("format").hidden = false;
+        let text = document.getElementById("welcome");
+        text.remove();
+      }
+
+      function hideForm(){
+        document.getElementById("format").hidden = true;
+      }
+
+      function setCookiesAndShowWelcomeMessage() {
+        const firstname = document.getElementById("firstname").value;
+        const email = document.getElementById("email").value;
+        if (firstname && email) {
+          Cookies.set("firstname", firstname, { expires: 10 });
+          Cookies.set("email", email, { expires: 10 });
+        }
+        showWelcomeMessageOrForm();
+      }
+
+      function showCookies() {
+        const p = document.createElement("P");
+        const EMAIL = Cookies.get("email");
+        const FIRSTNAME = Cookies.get("firstname");
+        p.innerHTML = `Email: ${email} - Firstname: ${name}`;
+        const $body = document.querySelector("body");
+        $body.append(p);
+      }
+
+      function deleteCookiesAndShowForm(){
+        showForm();
+        Cookies.remove("firstname");
+        Cookies.remove("email");
+      }
+
+      function showWelcomeMessageOrForm(){
+        let user = Cookies.get("firstname");
+        let email = Cookies.get("email");
+        if (user && email) {
+            hideForm();
+
+            const $body = document.querySelector("body");
+
+            const $h1 = document.createElement("h1");
+            $h1.setAttribute("id", "welcome");
+            $h1.innerHTML = `Welcome: ${user}`;
+
+            const $a = document.createElement("a");
+            $a.innerHTML = "(logout)";
+            $a.style.cssText =
+            "font-weight: normal; font-style: italic; margin-left: 10px;";
+
+            $a.setAttribute("onclick", "deleteCookiesAndShowForm()");
+
+            $h1.append($a);
+            $body.append($h1);
+        }
+        else{
+            showForm();
+        }
+      }
+      showWelcomeMessageOrForm();
+    </script>
+  </body>
+</html>
